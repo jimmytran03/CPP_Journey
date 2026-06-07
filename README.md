@@ -6,3 +6,5 @@ I will go back to learning Rust one day, but that is until I know C++ really wel
 Here I will be posting some small and big projects as I learn C++/
 
 I am learning from learncpp.com
+
+In the folders that say ch1, ch2 etc, those are each chapters from leancpp.com
