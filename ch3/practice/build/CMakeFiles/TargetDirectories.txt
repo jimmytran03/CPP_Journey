@@ -1,0 +1,3 @@
+/home/jimmytran/Desktop/learn_C++/ch3/practice/build/CMakeFiles/main.dir
+/home/jimmytran/Desktop/learn_C++/ch3/practice/build/CMakeFiles/edit_cache.dir
+/home/jimmytran/Desktop/learn_C++/ch3/practice/build/CMakeFiles/rebuild_cache.dir

@@ -1,32 +1,25 @@
+#include <plog/Log.h> // Step 1: include the logger headers
+#include <plog/Initializers/RollingFileInitializer.h>
 #include <iostream>
-
-int add(int x, int y)
-{
-    return x + y;
-}
-
-void printResult(int z)
-{
-    std::cout << "The answer is: " << z << '\n';
-}
 
 int getUserInput()
 {
-    std::cout << "Enter a number: ";
-    int x{};
-    std::cin >> x;
-    return x;
+	PLOGD << "getUserInput() called"; // PLOGD is defined by the plog library
+
+	std::cout << "Enter a number: ";
+	int x{};
+	std::cin >> x;
+	return x;
 }
 
 int main()
 {
-    int x{ getUserInput() };
-std::cerr << "Int x is " << x <<'\n';
-    int y{ getUserInput() };
-std::cerr << "Int y is " << y <<'\n';
+	plog::init(plog::debug, "Logfile.txt"); // Step 2: initialize the logger
 
-    int z { add(x, y) };
-    printResult(z);
+	PLOGD << "main() called"; // Step 3: Output to the log as if you were writing to the console
 
-    return 0;
+	int x{ getUserInput() };
+	std::cout << "You entered: " << x << '\n';
+
+	return 0;
 }
