@@ -1,14 +1,11 @@
 #include <iostream>
-
-void doSomething(unsigned int x)
-{
-
-    std::cout << "x is " << x << '\n';
-}
+#include <cstddef>
 
 int main()
 {
-    doSomething(-1);
+    int x { 5 };
+    std::size_t s { sizeof(x) };
+    std::cout << s << '\n';
 
     return 0;
 }
