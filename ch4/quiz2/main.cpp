@@ -10,9 +10,7 @@ double getTowerHeight()
 
 double calculateBallHeight(double towerHeight, int seconds)
 {
-    double gravity { 9.8 };
-
-    double fallDistance { gravity * (seconds * seconds) / 2.0 };
+    double fallDistance { 9.8 * (seconds * seconds) / 2.0 };
     double ballHeight { towerHeight - fallDistance };
 
     if (ballHeight < 0.0)
