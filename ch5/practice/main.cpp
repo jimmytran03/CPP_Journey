@@ -1,13 +1,30 @@
-float f { 4.1f };
+#include <iostream>
 
-double avogadro { 6.02e23 }; 
+int max (int x, int y)
+{
+    if (x > y)
+        return x;
+    else
+        return y;
+}
 
-// magic numbers
-const int maxStudentsPerSchool { numClassrooms * 30 };
-setMax(30);
+constexpr int xmax(int x, int y)
+{
+    if (x > y)
+        return x;
+    else
+        return y;
+}
 
-const int maxStudentsPerClass { 30 };
-const int totalStudents{ numClassrooms * maxStudentsPerClass };
+int main()
+{
+    int m1 { max(5, 6) };
+    const int m2 { max(5, 6) };
+    constexpr int m3 { max(5, 6) };
 
-const int maxNameLength { 30 };
-setMax(maxNameLength);
+    int m4 { cmax(5, 6) };
+    const int m5 { cmax(5, 6) };
+    constexpr int m6 { cmax(5, 6) };
+
+    return 0;
+}
