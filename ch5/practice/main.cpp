@@ -1,30 +1,21 @@
 #include <iostream>
-
-int max (int x, int y)
-{
-    if (x > y)
-        return x;
-    else
-        return y;
-}
-
-constexpr int xmax(int x, int y)
-{
-    if (x > y)
-        return x;
-    else
-        return y;
-}
+#include <string_view>
 
 int main()
 {
-    int m1 { max(5, 6) };
-    const int m2 { max(5, 6) };
-    constexpr int m3 { max(5, 6) };
+	std::string_view str{ "Peach" };
+	std::cout << str << '\n';
 
-    int m4 { cmax(5, 6) };
-    const int m5 { cmax(5, 6) };
-    constexpr int m6 { cmax(5, 6) };
+	// Remove 1 character from the left side of the view
+	str.remove_prefix(1);
+	std::cout << str << '\n';
 
-    return 0;
+	// Remove 2 characters from the right side of the view
+	str.remove_suffix(2);
+	std::cout << str << '\n';
+
+	str = "Peach"; // reset the view
+	std::cout << str << '\n';
+
+	return 0;
 }
