@@ -2,25 +2,18 @@
 
 int getValue()
 {
-    std::cout << "Enter an integer: ";
-
+    std::cout << "Enter a number: ";
     int x{};
     std::cin >> x;
     return x;
 }
 
-void printCalculation(int x, int y, int z)
-{
-    std::cout << x + (y * z);
-}
-
 int main()
 {
-    int a{ getValue() };
-    int b{ getValue() };
-    int c{ getValue() };
-
-    printCalculation(a, b, c);
+    int x{ getValue() };
+    int y{ getValue() };
+    int max{ (x > y) ? x : y};
+    std::cout << "The max of " << x << " and " << y << " is " << max << ".\n";
 
     return 0;
 }
