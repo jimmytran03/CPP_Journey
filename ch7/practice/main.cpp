@@ -1,11 +1,13 @@
 #include <iostream>
 
-extern int g_x;
-extern const int g_y;
+namespace constants
+{
+    constexpr double gravity { 9.8 };
+}
 
 int main()
 {
-    std::cout << g_x << ' ' << g_y << '\n';
+    std::cout << constants::gravity << '\n';
 
     return 0;
 }

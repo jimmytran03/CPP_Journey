@@ -1,2 +1,6 @@
-int g_x { 2 };
-extern const int g_y { 3 };
+int init()
+{
+    return 5;
+}
+
+int g_something{ init() }; // non-constexpr initialization
