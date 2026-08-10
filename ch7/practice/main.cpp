@@ -1,13 +1,30 @@
 #include <iostream>
 
-namespace constants
+// We'll define a symbolic constant with a nice name
+constexpr bool g_firstCall { true };
+
+int getInteger(bool bFirstCall)
 {
-    constexpr double gravity { 9.8 };
+	if (bFirstCall)
+	{
+		std::cout << "Enter an integer: ";
+	}
+	else
+	{
+		std::cout << "Enter another integer: ";
+	}
+
+	int i{};
+	std::cin >> i;
+	return i;
 }
 
 int main()
 {
-    std::cout << constants::gravity << '\n';
+	int a{ getInteger(g_firstCall) };  // so that it's clearer what the argument represents here
+	int b{ getInteger(!g_firstCall) };
 
-    return 0;
+	std::cout << a << " + " << b << " = " << (a + b) << '\n';
+
+	return 0;
 }
