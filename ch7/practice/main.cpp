@@ -1,30 +1,31 @@
 #include <iostream>
 
-// We'll define a symbolic constant with a nice name
-constexpr bool g_firstCall { true };
-
-int getInteger(bool bFirstCall)
+namespace V1 // declare a normal namespace named V1
 {
-	if (bFirstCall)
-	{
-		std::cout << "Enter an integer: ";
-	}
-	else
-	{
-		std::cout << "Enter another integer: ";
-	}
+    void doSomething()
+    {
+        std::cout << "V1\n";
+    }
+}
 
-	int i{};
-	std::cin >> i;
-	return i;
+inline namespace V2 // declare an inline namespace named V2
+{
+    namespace // unnamed namespace
+    {
+        void doSomething() // has internal linkage
+        {
+            std::cout << "V2\n";
+        }
+
+    }
 }
 
 int main()
 {
-	int a{ getInteger(g_firstCall) };  // so that it's clearer what the argument represents here
-	int b{ getInteger(!g_firstCall) };
+    V1::doSomething(); // calls the V1 version of doSomething()
+    V2::doSomething(); // calls the V2 version of doSomething()
 
-	std::cout << a << " + " << b << " = " << (a + b) << '\n';
+    doSomething(); // calls the inline version of doSomething() (which is V2)
 
-	return 0;
+    return 0;
 }
