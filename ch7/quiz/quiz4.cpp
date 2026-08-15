@@ -16,3 +16,7 @@ int main()
 
     return 0;
 }
+
+// Short comings of accumulate: 
+// 1. There is no conventional way to reset the accumulation without restarting the program.
+// 2. There is no conventional way to have multiple accumulators running.
