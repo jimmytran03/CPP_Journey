@@ -1,20 +1,28 @@
 #include <iostream>
 
+void switchExample(int x)
+{
+    switch (x)
+    {
+    case 1:
+        std::cout << "One";
+        return; 
+    case 2:
+        std::cout << "two";
+        return; 
+    case 3:
+        std::cout << "three";
+        return; 
+    default:
+        std::cout << "unknown";
+        return;    
+    }
+}
+
 int main()
 {
-    std::cout << "Enter a number: ";
-    int x{};
-    std::cin >> x;
-
-    if (x >= 0)
-    {
-        if (x <= 20)
-            std::cout << x << " is between 0 and 20\n";
-        else // attached to inner if statement
-            std::cout << x << " is greater than 20\n";
-    }
-    else // attached to outer if statement
-        std::cout << x << " is negative\n";
+    switchExample(2);
+    std::cout << '\n';
 
     return 0;
 }
