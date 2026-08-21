@@ -2,18 +2,17 @@
 
 int main()
 {
-    int outer_num{ 5 };
-    while (outer_num >= 1)
+    int num1{ 5 };
+    while (num1 >= 1)
     {
-        int inner_num{ outer_num };
-        while (inner_num >= 1)
+        int num2{ num1 };
+        while (num2 >= 1)
         {
-            std::cout << inner_num << ' ';
-            --inner_num;
-        }
+            std::cout << num2 << ' ';
+            --num2; 
+        }   
         std::cout << '\n';
-        --outer_num;
+        --num1;
     }
-
     return 0;
 }
