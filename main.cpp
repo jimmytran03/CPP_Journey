@@ -2,22 +2,12 @@
 
 int main()
 {
-    int outer{ 1 };
-    while (outer <= 5)
+    int total{};
+    for(int i{ 0 }; i <= 5; ++i)
     {
-        int inner{ 5 };
-        while (inner >= 1)
-        {
-            if (inner <= outer)
-                std::cout << inner << ' ';
-            else
-                std::cout << "  ";
-
-            --inner;
-        }
-
-        std::cout << '\n';
-        ++outer;
+        total += i;
     }
+    std::cout << total;
+    
     return 0;
 }
